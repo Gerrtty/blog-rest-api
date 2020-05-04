@@ -1,0 +1,74 @@
+
+### Authorization
+POST http://localhost:9099/signIn
+Content-Type: application/json
+
+{
+  "email": "yuliya@gmail.com",
+  "password": "123"
+}
+
+### Registration
+POST http://localhost:9099/signUp
+Content-Type: application/json
+
+{
+  "email" : "someUser@gmail.com",
+  "password": "123"
+}
+###
+
+### Post with id = 2
+GET http://localhost:9099/post/2
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ5dWxpeWFAZ21haWwuY29tIiwicm9sZSI6IlVTRVIifQ.n_UPc8YzvpjGjET9PKkt_Xwt3j9r2azOwOillGOtl60
+###
+
+### AllPosts - first page
+GET http://localhost:9099/posts/1
+###
+
+### AllPosts of user with id = 1 - first page
+GET http://localhost:9099/userPosts/id1/1
+###
+
+###
+POST http://localhost:9099/create
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ5dWxpeWFAZ21haWwuY29tIiwicm9sZSI6IlVTRVIifQ.n_UPc8YzvpjGjET9PKkt_Xwt3j9r2azOwOillGOtl60
+Content-Type: application/json
+
+{
+  "title": "NewPost",
+  "body": "Text"
+}
+###
+
+### delete post with id
+DELETE http://localhost:9099/delete/2
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJ5dWxpeWFAZ21haWwuY29tIiwicm9sZSI6IlVTRVIifQ.n_UPc8YzvpjGjET9PKkt_Xwt3j9r2azOwOillGOtl60
+###
+
+### Update post
+PUT http://localhost:9099/update/2
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiZW1haWwiOiJzb21lVXNlckBnbWFpbC5jb20iLCJyb2xlIjoiVVNFUiJ9.tey0iaGOQpEz9aNRAhomqKk8WK1EGBV6sWGaRG4y92o
+Content-Type: application/json
+
+{
+  "title": "NewNewPost"
+}
+###
+
+###
+POST http://localhost:9099/post/1/createComment
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiZW1haWwiOiJzb21lVXNlckBnbWFpbC5jb20iLCJyb2xlIjoiVVNFUiJ9.tey0iaGOQpEz9aNRAhomqKk8WK1EGBV6sWGaRG4y92o
+Content-Type: application/json
+
+{
+  "text": "New comment 5"
+}
+###
+
+###
+POST http://localhost:9099/post/5
+Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiZW1haWwiOiJzb21lVXNlckBnbWFpbC5jb20iLCJyb2xlIjoiVVNFUiJ9.tey0iaGOQpEz9aNRAhomqKk8WK1EGBV6sWGaRG4y92o
+Content-Type: application/json
+###
